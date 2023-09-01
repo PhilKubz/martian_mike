@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgav4siatemgv"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ca1kr"]
+[ext_resource type="PackedScene" uid="uid://cree6qg3jtin" path="res://Scenes/bg.tscn" id="2_o3dwr"]
+[ext_resource type="Texture2D" uid="uid://drqlv7vkpwkxi" path="res://Assets/textures/bg/Gray.png" id="3_d1h0p"]
+[ext_resource type="FontFile" uid="uid://bl8voqe4etphi" path="res://Assets/fonts/Kenney Pixel Square.ttf" id="4_pby60"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0r4ok"]
+font = ExtResource("4_pby60")
+font_size = 48
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ca1kr")
+
+[node name="BG" parent="." instance=ExtResource("2_o3dwr")]
+bg_texture = ExtResource("3_d1h0p")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 43.0
+offset_right = 204.0
+offset_bottom = 118.0
+grow_horizontal = 2
+text = "Martian Mike"
+label_settings = SubResource("LabelSettings_0r4ok")
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 2
+offset_left = 176.0
+offset_top = 151.0
+offset_right = 304.0
+offset_bottom = 189.0
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_pby60")
+theme_override_font_sizes/font_size = 24
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+offset_left = 215.0
+offset_top = 205.0
+offset_right = 265.0
+offset_bottom = 230.0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_pby60")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

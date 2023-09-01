@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://batu4rcf520r7"]
+
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_785wo"]
+[ext_resource type="FontFile" uid="uid://bl8voqe4etphi" path="res://Assets/fonts/Kenney Pixel Square.ttf" id="1_knukb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ki0bt"]
+font = ExtResource("1_knukb")
+font_size = 48
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_785wo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -227.0
+offset_top = -37.0
+offset_right = 229.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nice, You did it!"
+label_settings = SubResource("LabelSettings_ki0bt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 38.0
+offset_right = 41.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_knukb")
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

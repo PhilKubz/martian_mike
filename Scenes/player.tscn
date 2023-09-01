@@ -207,7 +207,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0wpm"]
 size = Vector2(15, 23)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 light_mask = 2
 visibility_layer = 5
 script = ExtResource("1_413ca")
